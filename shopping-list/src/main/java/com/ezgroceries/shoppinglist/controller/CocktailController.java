@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.controller;
 
-import com.ezgroceries.shoppinglist.internal.cocktail.CocktailResource;
+import com.ezgroceries.shoppinglist.model.CocktailResource;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
