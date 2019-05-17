@@ -34,7 +34,7 @@ public class ShoppingController {
 
 
     @PostMapping(value = "/{accountId}/cocktails")
-    @ResponseStatus(HttpStatus.OK) // 201
+    @ResponseStatus(HttpStatus.OK)
     public List<Map<String, String>> addCocktails(@PathVariable String accountId, @RequestBody List<Map<String, String>> body) {
         return body.subList(0, 1);
     }
