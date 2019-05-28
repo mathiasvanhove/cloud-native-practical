@@ -1,9 +1,11 @@
 package com.ezgroceries.shoppinglist.clients;
 
 import com.ezgroceries.shoppinglist.clients.CocktailDBResponse.DrinkResource;
+import com.ezgroceries.shoppinglist.entities.CocktailEntity;
 import com.ezgroceries.shoppinglist.repositories.CocktailRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,15 +30,22 @@ public interface CocktailDBClient {
         public CocktailDBClientFallback(CocktailRepository cocktailRepository) {
             this.cocktailRepository = cocktailRepository;
         }
-
+        
         @Override
         public CocktailDBResponse searchCocktails(String search) {
+            List<CocktailEntity> cocktailEntities = cocktailRepository.findByNameContainingIgnoreCase(search);
+
             CocktailDBResponse cocktailDBResponse = new CocktailDBResponse();
-            CocktailDBResponse.DrinkResource drink = new CocktailDBResponse.DrinkResource();
-            drink.setStrDrink("fallbacktestDrink");
-            List<DrinkResource> list = new ArrayList<>();
-            list.add(drink);
-            cocktailDBResponse.setDrinks(list);
+            cocktailDBResponse.setDrinks(cocktailEntities.stream().map(cocktailEntity -> {
+                CocktailDBResponse.DrinkResource drinkResource = new CocktailDBResponse.DrinkResource();
+                drinkResource.setIdDrink(cocktailEntity.getIdDrink());
+                drinkResource.setStrDrink(cocktailEntity.getName());
+                drinkResource.setStrGlass(cocktailEntity.getGlass());
+                drinkResource.setStrDrinkThumb(cocktailEntity.getImage());
+                drinkResource.setStrInstructions(cocktailEntity.getInstructions());
+                return drinkResource;
+            }).collect(Collectors.toList()));
+
             return cocktailDBResponse;
         }
     }
