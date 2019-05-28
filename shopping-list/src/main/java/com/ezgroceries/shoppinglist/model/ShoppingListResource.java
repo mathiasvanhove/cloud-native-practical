@@ -9,8 +9,8 @@ import java.util.UUID;
  * @since release/yyyymm  (2019-05-07)
  */
 public class ShoppingListResource {
-    private UUID shoppingListId;
-    private String name;
+    private final UUID shoppingListId;
+    private final String name;
     private List<String> ingredients;
 
     public ShoppingListResource(UUID shoppingListId, String name) {
@@ -30,6 +30,8 @@ public class ShoppingListResource {
     public List<String> getIngredients() {
         return ingredients;
     }
+
+    public void addIngredient(String ingredient) {this.ingredients.add(ingredient);}
 
     public void addIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
