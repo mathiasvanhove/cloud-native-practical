@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.client;
+package com.ezgroceries.shoppinglist.clients;
 
 import java.util.List;
 

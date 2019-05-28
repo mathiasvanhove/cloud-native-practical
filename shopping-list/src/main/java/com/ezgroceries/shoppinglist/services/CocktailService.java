@@ -1,7 +1,7 @@
 package com.ezgroceries.shoppinglist.services;
 
 import com.ezgroceries.shoppinglist.entities.CocktailEntity;
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.models.CocktailResource;
 import java.util.List;
 
 /**

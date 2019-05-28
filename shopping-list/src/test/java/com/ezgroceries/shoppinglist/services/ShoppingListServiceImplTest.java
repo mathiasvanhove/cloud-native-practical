@@ -11,7 +11,7 @@ import static org.mockito.Mockito.when;
 
 import com.ezgroceries.shoppinglist.entities.CocktailEntity;
 import com.ezgroceries.shoppinglist.entities.ShoppingListEntity;
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.models.ShoppingListResource;
 import com.ezgroceries.shoppinglist.repositories.ShoppingListRepository;
 import java.util.Arrays;
 import java.util.List;

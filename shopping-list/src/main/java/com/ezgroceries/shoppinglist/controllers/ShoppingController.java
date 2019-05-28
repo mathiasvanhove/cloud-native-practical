@@ -1,6 +1,6 @@
-package com.ezgroceries.shoppinglist.controller;
+package com.ezgroceries.shoppinglist.controllers;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.models.ShoppingListResource;
 import com.ezgroceries.shoppinglist.services.ShoppingListService;
 import java.util.List;
 import java.util.Map;

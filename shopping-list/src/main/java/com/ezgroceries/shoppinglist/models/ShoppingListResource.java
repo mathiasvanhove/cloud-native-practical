@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.model;
+package com.ezgroceries.shoppinglist.models;
 
 import java.util.ArrayList;
 import java.util.List;
