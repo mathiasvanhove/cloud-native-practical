@@ -3,7 +3,7 @@ package com.ezgroceries.shoppinglist.services;
 import com.ezgroceries.shoppinglist.entities.CocktailEntity;
 import com.ezgroceries.shoppinglist.entities.ShoppingListEntity;
 import com.ezgroceries.shoppinglist.exceptions.ShoppingListException;
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.models.ShoppingListResource;
 import com.ezgroceries.shoppinglist.repositories.ShoppingListRepository;
 import java.util.ArrayList;
 import java.util.List;

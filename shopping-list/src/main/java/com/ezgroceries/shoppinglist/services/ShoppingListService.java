@@ -1,6 +1,6 @@
 package com.ezgroceries.shoppinglist.services;
 
-import com.ezgroceries.shoppinglist.model.ShoppingListResource;
+import com.ezgroceries.shoppinglist.models.ShoppingListResource;
 import java.util.List;
 
 /**

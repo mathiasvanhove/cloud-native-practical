@@ -1,6 +1,6 @@
-package com.ezgroceries.shoppinglist.controller;
+package com.ezgroceries.shoppinglist.controllers;
 
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.models.CocktailResource;
 import com.ezgroceries.shoppinglist.services.CocktailService;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;

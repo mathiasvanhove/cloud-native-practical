@@ -1,4 +1,4 @@
-package com.ezgroceries.shoppinglist.controller;
+package com.ezgroceries.shoppinglist.controllers;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.models.CocktailResource;
 import com.ezgroceries.shoppinglist.services.CocktailService;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +31,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
-@ComponentScan("com.ezgroceries.shoppinglist.controller")
+@ComponentScan("com.ezgroceries.shoppinglist.controllers")
 public class CocktailControllerTest {
 
     @Autowired

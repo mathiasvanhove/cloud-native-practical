@@ -1,10 +1,10 @@
 package com.ezgroceries.shoppinglist.services;
 
-import com.ezgroceries.shoppinglist.client.CocktailDBClient;
-import com.ezgroceries.shoppinglist.client.CocktailDBResponse;
-import com.ezgroceries.shoppinglist.client.CocktailDBResponse.DrinkResource;
+import com.ezgroceries.shoppinglist.clients.CocktailDBClient;
+import com.ezgroceries.shoppinglist.clients.CocktailDBResponse;
+import com.ezgroceries.shoppinglist.clients.CocktailDBResponse.DrinkResource;
 import com.ezgroceries.shoppinglist.entities.CocktailEntity;
-import com.ezgroceries.shoppinglist.model.CocktailResource;
+import com.ezgroceries.shoppinglist.models.CocktailResource;
 import com.ezgroceries.shoppinglist.repositories.CocktailRepository;
 import java.util.Arrays;
 import java.util.List;
@@ -53,7 +53,7 @@ public class CocktailServiceImpl implements CocktailService {
         Map<String, CocktailEntity> allEntityMap = drinks.stream().map(drinkResource -> {
             CocktailEntity cocktailEntity = existingEntityMap.get(drinkResource.getIdDrink());
             if (cocktailEntity == null) {
-                CocktailEntity newCocktailEntity = new CocktailEntity(UUID.randomUUID(), drinkResource.getIdDrink(), drinkResource.getStrDrink());
+                CocktailEntity newCocktailEntity = new CocktailEntity(UUID.randomUUID(), drinkResource.getIdDrink(), drinkResource.getStrDrink(), drinkResource.getStrGlass(), drinkResource.getStrInstructions(), drinkResource.getStrDrinkThumb());
                 cocktailEntity = cocktailRepository.save(newCocktailEntity);
             }
             return cocktailEntity;
