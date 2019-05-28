@@ -53,7 +53,7 @@ public class CocktailServiceImpl implements CocktailService {
         Map<String, CocktailEntity> allEntityMap = drinks.stream().map(drinkResource -> {
             CocktailEntity cocktailEntity = existingEntityMap.get(drinkResource.getIdDrink());
             if (cocktailEntity == null) {
-                CocktailEntity newCocktailEntity = new CocktailEntity(UUID.randomUUID(), drinkResource.getIdDrink(), drinkResource.getStrDrink());
+                CocktailEntity newCocktailEntity = new CocktailEntity(UUID.randomUUID(), drinkResource.getIdDrink(), drinkResource.getStrDrink(), drinkResource.getStrGlass(), drinkResource.getStrInstructions(), drinkResource.getStrDrinkThumb());
                 cocktailEntity = cocktailRepository.save(newCocktailEntity);
             }
             return cocktailEntity;
